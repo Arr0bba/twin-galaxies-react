@@ -31,7 +31,7 @@ The homepage introduces visitors to Twin Galaxies, highlighting its importance i
 The layout is clean and user-friendly, ensuring accessibility across desktop, tablet, and mobile devices, very intuitive interface.
 
 ## 📂 Folder Structure Scheme
-
+```bash
 TWIN-GALAXIES-REACT
 │
 ├── 📂 node_modules/
@@ -134,6 +134,7 @@ TWIN-GALAXIES-REACT
 └── vite.config.ts
     (Vite configuration file for bundling and development server setup.)
 
+```
 ## Type of Architecture Election 
 
 I used for this proyect a modular architecture because React is component-based by nature. The folder structure reflects this logic by separating the application into clearly defined layers classified according to their functionality.
