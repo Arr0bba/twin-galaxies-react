@@ -1,9 +1,11 @@
 # TECHNICAL DOCUMENTATION
 
+![TS](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
+![Rjs](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)
 ![HTML](https://img.shields.io/badge/HTML-orange?logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-orange?logo=css3&logoColor=white)
 ![JS](https://img.shields.io/badge/JavaScript-orange?logo=javascript&logoColor=white)
-![TS](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
+![VT](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white)
 
 # 📝 Overhead View of the Project
 
