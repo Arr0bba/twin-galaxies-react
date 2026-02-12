@@ -1,11 +1,11 @@
 # TECHNICAL DOCUMENTATION
 
-![TS](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
 ![Rjs](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)
+![VT](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white)
+![TS](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
 ![HTML](https://img.shields.io/badge/HTML-orange?logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-orange?logo=css3&logoColor=white)
 ![JS](https://img.shields.io/badge/JavaScript-orange?logo=javascript&logoColor=white)
-![VT](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white)
 
 # 📝 Overhead View of the Project
 
@@ -19,7 +19,7 @@ The main goal of this website is to present:
 
 - A visual and interactive leaderboard section
 
--A modern and responsive design
+- A modern and responsive design
 
 The homepage introduces visitors to Twin Galaxies, highlighting its importance in the evolution of esports and competitive gaming. It features a hero section, navigation bar, informative sections, and a dynamic leaderboard area.
 
