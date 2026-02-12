@@ -9,7 +9,7 @@
 
 # 📝 Overhead View of the Project
 
-> This project is a web application inspired by Twin Galaxies, the iconic organization that tracks and verifies videogame world records.
+This project is a web application inspired by Twin Galaxies, the iconic organization that tracks and verifies videogame world records.
 
 The main goal of this website is to present:
 
@@ -33,7 +33,23 @@ The Home Page serves as the central hub of the website and includes:
 
 The layout is clean and user-friendly, ensuring accessibility across desktop, tablet, and mobile devices, very intuitive interface.
 
+## Type of Architecture Election 
+
+I used for this proyect a modular architecture because React is component-based by nature. The folder structure reflects this logic by separating the application into clearly defined layers classified according to their functionality.
+
+The 📂components/ folder contains reusable UI elements, following React’s most basic principle, building interfaces from small, independent pieces. The 📂pages/ folder represents full views of the application, each composed of multiple components. This separation ensures a clear distinction between reusable building blocks and complete screens.
+
+The 📂types/ folder centralizes TypeScript interfaces and data models, improving type safety and making the data structure consistent across the project.
+
+Using Vite as the build tool keeps the project lightweight and optimized, while TypeScript enforces strong typing and reduces runtime errors. Together, this structure promotes scalability, maintainability, and clean code organization as the project grows.
+
 ## 📂 Folder Structure Scheme
+**DISCLAIMER**: I highly recommend install Tree on Bash Terminal with the command:
+- `sudo <advanced package tool> install tree`.
+  
+To have a clearer glance of the directories structure.
+
+My project is organized like this:
 ```bash
 TWIN-GALAXIES-REACT
 │
@@ -137,27 +153,16 @@ TWIN-GALAXIES-REACT
 └── vite.config.ts
     (Vite configuration file for bundling and development server setup.)
 ```
-## Type of Architecture Election 
-
-I used for this proyect a modular architecture because React is component-based by nature. The folder structure reflects this logic by separating the application into clearly defined layers classified according to their functionality.
-
-The 📂components/ folder contains reusable UI elements, following React’s most basic principle, building interfaces from small, independent pieces. The 📂pages/ folder represents full views of the application, each composed of multiple components. This separation ensures a clear distinction between reusable building blocks and complete screens.
-
-The 📂types/ folder centralizes TypeScript interfaces and data models, improving type safety and making the data structure consistent across the project.
-
-Using Vite as the build tool keeps the project lightweight and optimized, while TypeScript enforces strong typing and reduces runtime errors. Together, this structure promotes scalability, maintainability, and clean code organization as the project grows.
-
-## 👥 Autor
-- Ariadna Izquierdo Méndez: Webmaster
-
 
 ## 📚 Sources / References 
 
-- 📖 MDN - General guide
-- 📖 W3Schools – HTML/CSS Tutorial
-- 📖 Slayingthedragon  – Flexbox, variables and CSS
-- 📖 Emezeta - Details of the page
+- 📖 MDN - General guide for CSS,HTML and JS  
+- 📖 W3Schools – Typescript
+- 📖 TYPESCRIPTLANG.ORG – Languague fundamentals
+- 📖 Fireships - "The Basics" video
+- 📖 Reddit - Folder Structure Scheme
 - 📖 Stack Overflow - Debugging
+- 📖 REACT.DEV - Build a React App from Scratch
 
 ### 🙏 Special Thanks / Acknowledgements
 
