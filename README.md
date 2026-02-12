@@ -1,4 +1,4 @@
-# TECHNICAL DOCUMENTATION
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Dynalight&size=35&pause=1000&color=000000&width=435&lines=Technical+Documentation" alt="Typing SVG" /></a>
 
 ![Rjs](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)
 ![VT](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white)
