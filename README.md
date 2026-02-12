@@ -3,6 +3,7 @@
 ![HTML](https://img.shields.io/badge/HTML-orange?logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-orange?logo=css3&logoColor=white)
 ![JS](https://img.shields.io/badge/JavaScript-orange?logo=javascript&logoColor=white)
+![TS](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
 
 # 📝 Overhead View of the Project
 
@@ -22,7 +23,7 @@ The homepage introduces visitors to Twin Galaxies, highlighting its importance i
 
 ## Main Page Description 
 
-> The Home Page serves as the central hub of the website and includes:
+The Home Page serves as the central hub of the website and includes:
 
 📜 A short historical summary
 
@@ -133,7 +134,6 @@ TWIN-GALAXIES-REACT
 │
 └── vite.config.ts
     (Vite configuration file for bundling and development server setup.)
-
 ```
 ## Type of Architecture Election 
 
@@ -149,7 +149,7 @@ Using Vite as the build tool keeps the project lightweight and optimized, while 
 - Ariadna Izquierdo Méndez: Webmaster
 
 
-## 📚 Sources / References
+## 📚 Sources / References 
 
 - 📖 MDN - General guide
 - 📖 W3Schools – HTML/CSS Tutorial
