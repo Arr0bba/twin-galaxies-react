@@ -164,6 +164,3 @@ TWIN-GALAXIES-REACT
 - 📖 Stack Overflow - Debugging
 - 📖 REACT.DEV - Build a React App from Scratch
 
-### 🙏 Special Thanks / Acknowledgements
-
- > Special thanks to the creators of this domains that inspired me to do my own proyect and motivate me to try to improve myself in every other future project.
