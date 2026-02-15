@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import type { RecordData } from "../types/RecordData";
+import type { RecordData } from "../../types/RecordData";
 
 export default function Records() {
   const [records, setRecords] = useState<RecordData[]>(() => {
@@ -127,20 +127,21 @@ export default function Records() {
       return;
     }
 
+    let result;
     const r = inputsValues();
 
     if (editingIndex === null) {
       // Create
-      records.push(r);
+      result = [ ...records, r ];
     } else {
       // Update
-      setRecords(records.map((oldR, i) => i === editingIndex ? r : oldR));
+      result = records.map((oldR, i) => i === editingIndex ? r : oldR);
       setEditingIndex(null);
       btnSubmitRef.current!.textContent = 'SUBMIT';
       btnCancelRef.current!.style.display = 'none';
     }
 
-    saveRecords(records);
+    saveRecords(result);
     recordFormRef.current!.reset();
   }
 
@@ -223,7 +224,7 @@ export default function Records() {
                 <th>Actions</th>
               </tr>
               { records.map((record, index) => (
-                <span key={index}>
+                <tr key={index}>
                   <td>{record.playerName}</td>
                   <td>{record.gameTitle}</td>
                   <td>{record.score}</td>
@@ -232,7 +233,7 @@ export default function Records() {
                     <button className="btn-edit" onClick={() => editRecord(index)}>EDIT</button>
                     <button className="btn-delete" onClick={() => deleteRecord(index)}>DELETE</button>
                   </td>
-                </span>
+                </tr>
               )) }
             </thead>
             <tbody id="records-tbody"></tbody>

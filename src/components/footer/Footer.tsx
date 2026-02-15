@@ -41,13 +41,13 @@ export default function Footer() {
                 width="90"
                 height="90"
               ></img>
-              <img
+              <a href="https://github.com/Arr0bba"><img
                 src="img/white-github-logo-removebg-preview.png"
                 alt="Git Hub Logo"
                 title="GitHub Profile"
                 width="90"
                 height="90"
-              ></img>
+              ></img></a>
             </div>
           </div>
           <div className="footer-bottom">

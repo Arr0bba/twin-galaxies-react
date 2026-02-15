@@ -12,7 +12,17 @@ export default function Header() {
         <>
             <header className="main-header">
                 <div className="header-content">
-                    <h1 className="logo">TWIN GALAXIES</h1>
+                    <h1 className="logo">
+                        <img
+                            className="header-logo"
+                            src="img/twin-galaxies-removebg-preview.png"
+                            title="Twin Galaxies"
+                            alt="Twin Galaxies"
+                            width="150"
+                            height="150"
+                        ></img>
+                        TWIN GALAXIES
+                        </h1>
                     <div id="hamburger" className="hamburger" ref={hamRef} onClick={toggleNav}>
                         <i className="fa-solid fa-bars"></i>
                     </div>

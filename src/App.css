@@ -7,6 +7,10 @@
     --dark: #0a001a;
 }
 
+#root {
+    width: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -91,6 +95,11 @@ body {
     margin: 0 auto;
     padding: 1rem 20px;
     justify-content: space-between;
+}
+
+.header-logo {
+    height: auto;
+    max-width: 50px;
 }
 
 .logo {

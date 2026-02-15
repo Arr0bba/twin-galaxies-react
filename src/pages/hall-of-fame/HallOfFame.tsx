@@ -1,4 +1,4 @@
-import { HallOfFameCard, type HallOfFameCardProps } from "../components/HallOfFameCard";
+import { HallOfFameCard, type HallOfFameCardProps } from "../../components/hall-of-fame-card/HallOfFameCard";
 
 export default function HallOfFame() {
   const recordHolders: HallOfFameCardProps[] = [
@@ -25,7 +25,7 @@ export default function HallOfFame() {
         <div className="center-box">
           <h2>HALL OF FAME</h2>
           <div className="cards">
-            { recordHolders.map(r => (<HallOfFameCard playerName={r.playerName} gameTitle={r.gameTitle} score={r.score}></HallOfFameCard>)) }
+            { recordHolders.map((r, index) => (<HallOfFameCard key={index} playerName={r.playerName} gameTitle={r.gameTitle} score={r.score}></HallOfFameCard>)) }
           </div>
         </div>
       </section>

@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import ParallaxWrapper from "./components/ParallaxWrapper";
-import About from "./pages/About";
-import Gallery from "./pages/Gallery";
-import HallOfFame from "./pages/HallOfFame";
-import Home from "./pages/Home";
-import Records from "./pages/Records";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import ParallaxWrapper from "./components/parallax-wrapper/ParallaxWrapper";
+import About from "./pages/about/About";
+import Gallery from "./pages/gallery/Gallery";
+import HallOfFame from "./pages/hall-of-fame/HallOfFame";
+import Home from "./pages/home/Home";
+import Records from "./pages/records/Records";
 
 function App() {
   return (

@@ -1,4 +1,4 @@
-import type { RecordData } from "../types/RecordData";
+import type { RecordData } from "../../types/RecordData";
 
 export type HallOfFameCardProps = Pick<RecordData, "playerName" | "gameTitle"> & { score: number | string };
 

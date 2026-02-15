@@ -1,4 +1,4 @@
-import { type PhotoProps, Photo } from "../components/Photo";
+import { type PhotoProps, Photo } from "../../components/photo/Photo";
 
 export default function Gallery() {
   const photos: PhotoProps[] = [
