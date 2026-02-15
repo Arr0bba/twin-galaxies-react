@@ -8,6 +8,7 @@ import Gallery from "./pages/gallery/Gallery";
 import HallOfFame from "./pages/hall-of-fame/HallOfFame";
 import Home from "./pages/home/Home";
 import Records from "./pages/records/Records";
+import PlayTetris from "./pages/play-tetris/PlayTetris";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/hall-of-fame" element={ <HallOfFame /> } />
             <Route path="/gallery"      element={ <Gallery />    } />
             <Route path="/records"      element={ <Records />    } />
+            <Route path="/play-tetris"  element={ <PlayTetris />    } />
           </Routes>
         </BrowserRouter>
       </main>

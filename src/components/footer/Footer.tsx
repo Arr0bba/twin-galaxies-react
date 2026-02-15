@@ -15,6 +15,7 @@ export default function Footer() {
               <a href="/hall-of-fame">Hall of Fame</a>
               <a href="/gallery">Gallery</a>
               <a href="/records">Records</a>
+              <a href="/play-tetris">Play Tetris</a>
             </div>
             <div className="logo-img">
               <img

@@ -12,7 +12,7 @@ export default function Header() {
         <>
             <header className="main-header">
                 <div className="header-content">
-                    <h1 className="logo">
+                    <div style={{display: "flex", alignItems: "center"}}>
                         <img
                             className="header-logo"
                             src="img/twin-galaxies-removebg-preview.png"
@@ -20,9 +20,9 @@ export default function Header() {
                             alt="Twin Galaxies"
                             width="150"
                             height="150"
-                        ></img>
-                        TWIN GALAXIES
-                        </h1>
+                        />
+                        <h1 className="logo">TWIN GALAXIES</h1>
+                    </div>
                     <div id="hamburger" className="hamburger" ref={hamRef} onClick={toggleNav}>
                         <i className="fa-solid fa-bars"></i>
                     </div>
@@ -32,6 +32,7 @@ export default function Header() {
                         <a href="/hall-of-fame">HALL OF FAME</a>
                         <a href="/gallery">GALLERY</a>
                         <a href="/records">RECORDS</a>
+                        <a href="/play-tetris">PLAY TETRIS</a>
                     </nav>
                 </div>
             </header>
