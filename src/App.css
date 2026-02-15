@@ -170,7 +170,7 @@ body {
     background-repeat: no-repeat;
     background-size: 90%;
     background-color: rgba(127, 0, 127, 0.25);
-    background-image: url(../img/pacman-logo.png);
+    background-image: url(img/pacman-logo.png);
 }
 
 .paragraph-1 {

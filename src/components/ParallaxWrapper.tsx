@@ -1,10 +1,12 @@
-function ParallaxWrapper() {
+type ParallaxWrapperProps = { midSpeed: number, frontSpeed: number }
+
+function ParallaxWrapper({ midSpeed, frontSpeed }: ParallaxWrapperProps) {
     return (
         <>
             <div className= "parallax-wrapper">
-                <div className="layer layer-mid" data-speed="0.5"></div>
-                <div className="layer layer-front" data-speed="0.9" ></div>
-                <div className = "crt-overlay" ><div/> 
+                <div className="layer layer-mid" data-speed={midSpeed}></div>
+                <div className="layer layer-front" data-speed={frontSpeed}></div>
+                <div className = "crt-overlay" ></div>
             </div>
         </>
     );
