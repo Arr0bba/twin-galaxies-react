@@ -1,4 +1,4 @@
-import MessageList from "../../components/message-list/MessageList"
+import MessageList from "../../components/message-list/MessageList.jsx"
 
 export default function Home() {
   return (
