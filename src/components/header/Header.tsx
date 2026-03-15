@@ -50,7 +50,7 @@ export default function Header() {
                         <a href="/hall-of-fame">HALL OF FAME</a>
                         <a href="/gallery">GALLERY</a>
                         <a href="/records">RECORDS</a>
-                        <a href="/games">GAMES</a>
+                        <a href="/play-tetris">PLAY TETRIS</a>
                         <a href="/forum">FORUM</a>
                         {user ? (
                             <span

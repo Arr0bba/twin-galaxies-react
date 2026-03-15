@@ -15,7 +15,7 @@ export default function Footer() {
               <a href="/hall-of-fame">Hall of Fame</a>
               <a href="/gallery">Gallery</a>
               <a href="/records">Records</a>
-              <a href="/games">Games</a>
+              <a href="/play-tetris">Play Tetris</a>
               <a href="/forum">Forum</a>
             </div>
             <div className="social-links">
