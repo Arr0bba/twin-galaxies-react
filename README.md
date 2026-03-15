@@ -20,6 +20,9 @@ Now you can check my project without have to clone it :)
 # HiFi concept I made on Figma 
 ![Gallery](https://raw.githubusercontent.com/Arizzquierdo/twin-galaxies-react/main/public/Twin-galaxies.png)
 
+#NEW ADDITION! RSS FEED
+
+
 # 📝 Overhead View of the Project
 
 This project is a web application inspired by Twin Galaxies, the iconic organization that tracks and verifies videogame world records.
