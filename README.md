@@ -8,7 +8,8 @@
 ![JS](https://img.shields.io/badge/JavaScript-orange?logo=javascript&logoColor=white)
 
 # My hosted website
-https://twin-galaxies.web.app/
+>https://twin-galaxies.web.app/
+
 Now you can check my project without have to clone it :)
 
 # 📝 Overhead View of the Project
