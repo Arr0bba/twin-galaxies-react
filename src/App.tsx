@@ -11,6 +11,7 @@ import PlayTetris from "./pages/play-tetris/PlayTetris";
 import Records from "./pages/records/Records";
 import Legal from "./pages/legal/Legal";
 import Forum from "./pages/forum/Forum";
+import NewsArticle from "./pages/news/NewsArticle";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/play-tetris"  element={ <PlayTetris />    } />
             <Route path="/legal"        element={ <Legal />        } />
             <Route path="/forum"        element={ <Forum />        } />
+            <Route path="/news/:id"    element={ <NewsArticle />  } />
           </Routes>
         </BrowserRouter>
       </main>

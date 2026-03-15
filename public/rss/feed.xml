@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Twin Galaxies News</title>
+    <link>https://twin-galaxies.web.app</link>
+    <description>The latest news and updates from Twin Galaxies — the world's original video game authority.</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Mar 2025 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://twin-galaxies.web.app/rss/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Play Tetris Is Now Live!</title>
+      <link>https://twin-galaxies.web.app/news/tg-news-001</link>
+      <description>Head over to the Play Tetris section and challenge the leaderboard. Compete for the highest score and prove you're the ultimate arcade champion!</description>
+      <category>New Feature</category>
+      <pubDate>Mon, 10 Mar 2025 12:00:00 GMT</pubDate>
+      <guid isPermaLink="false">tg-news-001</guid>
+    </item>
+
+    <item>
+      <title>Community Chat Is On The Way</title>
+      <link>https://twin-galaxies.web.app/news/tg-news-002</link>
+      <description>A real-time chat feature is in development to keep the entire Twin Galaxies community connected. Stay tuned for launch details.</description>
+      <category>Coming Soon</category>
+      <pubDate>Sat, 08 Mar 2025 10:00:00 GMT</pubDate>
+      <guid isPermaLink="false">tg-news-002</guid>
+    </item>
+
+    <item>
+      <title>User Authentication In The Works</title>
+      <link>https://twin-galaxies.web.app/news/tg-news-003</link>
+      <description>Create your own account, track personal records, and manage your profile. Authentication is being built to bring a personalized experience.</description>
+      <category>Coming Soon</category>
+      <pubDate>Wed, 05 Mar 2025 09:00:00 GMT</pubDate>
+      <guid isPermaLink="false">tg-news-003</guid>
+    </item>
+
+    <item>
+      <title>Twin Galaxies Is Now On Instagram</title>
+      <link>https://twin-galaxies.web.app/news/tg-news-004</link>
+      <description>Follow us on Instagram for highlights, retro clips, behind-the-scenes content, and community spotlights. Join the arcade nation!</description>
+      <category>Social Media</category>
+      <pubDate>Mon, 03 Mar 2025 08:00:00 GMT</pubDate>
+      <guid isPermaLink="false">tg-news-004</guid>
+    </item>
+
+    <item>
+      <title>Official Discord Server Created</title>
+      <link>https://twin-galaxies.web.app/news/tg-news-005</link>
+      <description>Join the official Twin Galaxies Discord server to chat with players worldwide, share strategies, and stay up to date on events.</description>
+      <category>Social Media</category>
+      <pubDate>Sat, 01 Mar 2025 08:00:00 GMT</pubDate>
+      <guid isPermaLink="false">tg-news-005</guid>
+    </item>
+
+  </channel>
+</rss>

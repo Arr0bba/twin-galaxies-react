@@ -25,6 +25,12 @@
   gap: 16px;
 }
 
+.news-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .news-card {
   display: flex;
   gap: 16px;
