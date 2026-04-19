@@ -72,7 +72,7 @@ function MessageList() {
     setActiveFilter(prev => prev === category ? null : category);
   }
 
-  // --- Import ---
+
   const handleImport = async () => {
     try {
       setImportExportStatus("Selecting file...");
@@ -80,19 +80,21 @@ function MessageList() {
       let messagesArray = [];
 
       if (result.format === "csv") {
-        // CSV returns an array of objects directly
+
         messagesArray = result.data;
       } else if (result.format === "ods") {
-        // ODS also returns an array of objects via XLSX
+
         messagesArray = result.data;
       } else if (result.format === "json") {
-        // JSON: { messages: [...] } or just [...]
+
         messagesArray = result.data.messages || result.data;
       } else if (result.format === "xml") {
-        // XML: { messages: { message: [...] } } or { messages: { message: {...} } }
+
         const xmlData = result.data.messages || result.data;
         const rawMessages = xmlData.message || xmlData;
         messagesArray = Array.isArray(rawMessages) ? rawMessages : [rawMessages];
+      } else if (["txt", "md", "pdf"].includes(result.format)) {
+        messagesArray = result.data;
       }
 
       if (!Array.isArray(messagesArray) || messagesArray.length === 0) {
@@ -114,7 +116,7 @@ function MessageList() {
     }
   };
 
-  // --- Export ---
+
   const handleExport = async (format) => {
     try {
       if (messages.length === 0) {
@@ -123,7 +125,7 @@ function MessageList() {
         return;
       }
 
-      const { jsonData, xmlData, csvData } = MessageService.formatMessagesForExport(messages);
+      const { jsonData, xmlData, csvData, txtData, mdData } = MessageService.formatMessagesForExport(messages);
 
       switch (format) {
         case "json":
@@ -135,6 +137,20 @@ function MessageList() {
         case "csv":
           await saveFileInFormat("csv", csvData, "datos.csv");
           break;
+        case "txt":
+          await saveFileInFormat("txt", txtData, "datos.txt");
+          break;
+        case "md":
+          await saveFileInFormat("md", mdData, "datos.md");
+          break;
+        case "pdf": {
+          const { jsPDF } = await import("jspdf");
+          const doc = new jsPDF();
+          doc.text(txtData, 10, 10);
+          const pdfData = doc.output("blob");
+          await saveFileInFormat("pdf", pdfData, "datos.pdf");
+          break;
+        }
         case "ods": {
           const XLSX = await import("xlsx");
           const cleanMessages = messages.map(({ nick, content, category }) => ({ nick, content, category }));
@@ -203,6 +219,15 @@ function MessageList() {
             </button>
             <button className="import-export-btn export-btn" onClick={() => handleExport("ods")}>
               <FaFileExport /> ODS
+            </button>
+            <button className="import-export-btn export-btn" onClick={() => handleExport("txt")}>
+              <FaFileExport /> TXT
+            </button>
+            <button className="import-export-btn export-btn" onClick={() => handleExport("md")}>
+              <FaFileExport /> MD
+            </button>
+            <button className="import-export-btn export-btn" onClick={() => handleExport("pdf")}>
+              <FaFileExport /> PDF
             </button>
           </div>
           {importExportStatus && (

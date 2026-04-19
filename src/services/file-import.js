@@ -1,6 +1,9 @@
 import { showOpenFilePicker } from "show-open-file-picker";
 import Papa from "papaparse";
 import * as XLSX from "xlsx";
+import * as pdfjsLib from "pdfjs-dist";
+import pdfjsWorker from "pdfjs-dist/build/pdf.worker.mjs?url";
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 function xmlNodeToObject(node) {
   const children = Array.from(node.children);
@@ -56,6 +59,52 @@ function csvToJson(text) {
   return result.data;
 }
 
+function txtToJson(text) {
+  const result = [];
+  const lines = text.split('\n');
+  const regex = /^\[(.*?)\]\s*\((.*?)\):\s*(.*)$/;
+  for (const line of lines) {
+    const match = line.match(regex);
+    if (match) {
+      result.push({
+        nick: match[1].trim(),
+        category: match[2].trim(),
+        content: match[3].trim()
+      });
+    }
+  }
+  return result;
+}
+
+function mdToJson(text) {
+  const result = [];
+  const lines = text.split('\n');
+  const regex = /^\-\s*\*\*(.*?)\*\*\s+_(.*?)_:\s*(.*)$/;
+  for (const line of lines) {
+    const match = line.match(regex);
+    if (match) {
+      result.push({
+        nick: match[1].trim(),
+        category: match[2].trim(),
+        content: match[3].trim()
+      });
+    }
+  }
+  return result;
+}
+
+async function pdfToJson(buffer) {
+  const pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
+  let fullText = "";
+  for (let i = 1; i <= pdf.numPages; i++) {
+    const page = await pdf.getPage(i);
+    const content = await page.getTextContent();
+    const strings = content.items.map(item => item.str);
+    fullText += strings.join(" ") + "\n";
+  }
+  return txtToJson(fullText);
+}
+
 function getExtension(fileName) {
   return fileName.split(".").pop()?.toLowerCase() || "";
 }
@@ -87,6 +136,9 @@ export async function importFileToInternalJson() {
           "application/xml": [".xml"],
           "text/xml": [".xml"],
           "text/csv": [".csv"],
+          "text/plain": [".txt"],
+          "text/markdown": [".md"],
+          "application/pdf": [".pdf"],
           "application/vnd.oasis.opendocument.spreadsheet": [".ods"],
         },
       },
@@ -103,9 +155,18 @@ export async function importFileToInternalJson() {
     const firstSheetName = workbook.SheetNames[0];
     const worksheet = workbook.Sheets[firstSheetName];
     data = XLSX.utils.sheet_to_json(worksheet);
+  } else if (extension === "pdf") {
+    const buffer = await file.arrayBuffer();
+    data = await pdfToJson(buffer);
   } else {
     const text = await file.text();
-    data = parseFileContent(extension, text);
+    if (extension === "txt") {
+      data = txtToJson(text);
+    } else if (extension === "md") {
+      data = mdToJson(text);
+    } else {
+      data = parseFileContent(extension, text);
+    }
   }
 
   return {

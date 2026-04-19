@@ -66,7 +66,17 @@ const formatMessagesForExport = (messages) => {
     csvData += `${escapeCsv(msg.nick)},${escapeCsv(msg.content)},${escapeCsv(msg.category)}\n`;
   }
 
-  return { jsonData, xmlData, csvData };
+  let txtData = "";
+  for (const msg of cleanMessages) {
+    txtData += `[${msg.nick}] (${msg.category}): ${msg.content}\n`;
+  }
+
+  let mdData = "# Messages\n\n";
+  for (const msg of cleanMessages) {
+    mdData += `- **${msg.nick}** _${msg.category}_: ${msg.content}\n`;
+  }
+
+  return { jsonData, xmlData, csvData, txtData, mdData };
 };
 
 function escapeXml(str) {

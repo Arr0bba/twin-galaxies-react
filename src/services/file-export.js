@@ -34,7 +34,27 @@ export const saveFileInFormat = async (format, data, fileName = "data.json") => 
       acceptedType = {
         "application/vnd.oasis.opendocument.spreadsheet": [".ods"],
       };
-
+      content = data;
+      break;
+    case "txt":
+      description = "Text";
+      acceptedType = {
+        "text/plain": [".txt"],
+      };
+      content = data;
+      break;
+    case "md":
+      description = "Markdown";
+      acceptedType = {
+        "text/markdown": [".md"],
+      };
+      content = data;
+      break;
+    case "pdf":
+      description = "PDF";
+      acceptedType = {
+        "application/pdf": [".pdf"],
+      };
       content = data;
       break;
     default:
