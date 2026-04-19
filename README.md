@@ -7,9 +7,9 @@
 ![CSS](https://img.shields.io/badge/CSS-orange?logo=css3&logoColor=white)
 ![JS](https://img.shields.io/badge/JavaScript-orange?logo=javascript&logoColor=white)
 
-#Hosting URL
+# Hosting URL
 
-https://twin-galaxies.web.app
+- https://twin-galaxies.web.app 
 
 # 📝 Overhead View of the Project
 
