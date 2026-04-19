@@ -1,0 +1,19 @@
+{
+  "messages": [
+    {
+      "nick": "SpeedRunner42",
+      "content": "Just beat the Pac-Man world record! 3,333,360 points!",
+      "category": "Contests"
+    },
+    {
+      "nick": "RetroGamer",
+      "content": "Has anyone tried the new Donkey Kong remaster?",
+      "category": "New Game Releases"
+    },
+    {
+      "nick": "ArcadeFan",
+      "content": "Billy Mitchell is back with a new Centipede score",
+      "category": "Relevant Players"
+    }
+  ]
+}

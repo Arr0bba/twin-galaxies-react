@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { FaRegTrashAlt, FaPencilAlt } from 'react-icons/fa';
+import { FaRegTrashAlt, FaPencilAlt, FaFileImport, FaFileExport } from 'react-icons/fa';
 import MessageService from "../../services/message.service";
+import { importFileToInternalJson } from "../../services/file-import";
+import { saveFileInFormat } from "../../services/file-export";
 import "./MessageList.css";
 
 const CATEGORIES = ["Contests", "New Game Releases", "Relevant Players"];
@@ -9,6 +11,7 @@ function MessageList() {
   const [messages, setMessages] = useState([]);
   const [keyUpdate, setKeyUpdate] = useState(null);
   const [activeFilter, setActiveFilter] = useState(null);
+  const [importExportStatus, setImportExportStatus] = useState("");
   const refForm = useRef();
 
   const getAllMessages = () => {
@@ -69,6 +72,79 @@ function MessageList() {
     setActiveFilter(prev => prev === category ? null : category);
   }
 
+  // --- Import ---
+  const handleImport = async () => {
+    try {
+      setImportExportStatus("Selecting file...");
+      const result = await importFileToInternalJson();
+      let messagesArray = [];
+
+      if (result.format === "csv") {
+        // CSV returns an array of objects directly
+        messagesArray = result.data;
+      } else if (result.format === "json") {
+        // JSON: { messages: [...] } or just [...]
+        messagesArray = result.data.messages || result.data;
+      } else if (result.format === "xml") {
+        // XML: { messages: { message: [...] } } or { messages: { message: {...} } }
+        const xmlData = result.data.messages || result.data;
+        const rawMessages = xmlData.message || xmlData;
+        messagesArray = Array.isArray(rawMessages) ? rawMessages : [rawMessages];
+      }
+
+      if (!Array.isArray(messagesArray) || messagesArray.length === 0) {
+        setImportExportStatus("Error: no valid messages found in the file.");
+        return;
+      }
+
+      setImportExportStatus(`Importing ${messagesArray.length} messages...`);
+      await MessageService.importMessages(messagesArray);
+      getAllMessages();
+      setImportExportStatus(`✓ ${messagesArray.length} messages imported successfully!`);
+      setTimeout(() => setImportExportStatus(""), 3000);
+    } catch (err) {
+      if (err?.name === "AbortError") {
+        setImportExportStatus("");
+        return;
+      }
+      setImportExportStatus(`Error: ${err.message}`);
+    }
+  };
+
+  // --- Export ---
+  const handleExport = async (format) => {
+    try {
+      if (messages.length === 0) {
+        setImportExportStatus("No messages to export.");
+        setTimeout(() => setImportExportStatus(""), 3000);
+        return;
+      }
+
+      const { jsonData, xmlData, csvData } = MessageService.formatMessagesForExport(messages);
+
+      switch (format) {
+        case "json":
+          await saveFileInFormat("json", jsonData, "datos.json");
+          break;
+        case "xml":
+          await saveFileInFormat("xml", xmlData, "datos.xml");
+          break;
+        case "csv":
+          await saveFileInFormat("csv", csvData, "datos.csv");
+          break;
+      }
+
+      setImportExportStatus(`✓ Exported as ${format.toUpperCase()} successfully!`);
+      setTimeout(() => setImportExportStatus(""), 3000);
+    } catch (err) {
+      if (err?.name === "AbortError") {
+        setImportExportStatus("");
+        return;
+      }
+      setImportExportStatus(`Error: ${err.message}`);
+    }
+  };
+
   const filteredMessages = activeFilter
     ? messages.filter(m => m.category === activeFilter)
     : messages;
@@ -92,6 +168,32 @@ function MessageList() {
             </select>
             <input className="rounded-input" type="submit" value={(keyUpdate ? "Update" : "Add") + " Message"} />
           </form>
+        </div>
+
+        {/* Import / Export controls */}
+        <div className="import-export-container">
+          <div className="import-section">
+            <button className="import-export-btn import-btn" onClick={handleImport}>
+              <FaFileImport /> Import File
+            </button>
+          </div>
+          <div className="export-section">
+            <span className="export-label">Export:</span>
+            <button className="import-export-btn export-btn" onClick={() => handleExport("json")}>
+              <FaFileExport /> JSON
+            </button>
+            <button className="import-export-btn export-btn" onClick={() => handleExport("xml")}>
+              <FaFileExport /> XML
+            </button>
+            <button className="import-export-btn export-btn" onClick={() => handleExport("csv")}>
+              <FaFileExport /> CSV
+            </button>
+          </div>
+          {importExportStatus && (
+            <p className={`import-export-status ${importExportStatus.startsWith("Error") ? "status-error" : "status-success"}`}>
+              {importExportStatus}
+            </p>
+          )}
         </div>
 
         <div className="filter-container">

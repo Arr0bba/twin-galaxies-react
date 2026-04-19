@@ -137,3 +137,71 @@ input[type="submit"] {
 .update-message {
   cursor: pointer;
 }
+
+/* Import / Export */
+.import-export-container {
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 1.5em 0 0.5em;
+}
+
+.import-section,
+.export-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.export-label {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-right: 2px;
+}
+
+.import-export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 2px solid #6A476E;
+  background: transparent;
+  color: white;
+  font-family: inherit;
+  font-size: 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.import-export-btn:hover {
+  border-color: #00ffff;
+  color: #00ffff;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+}
+
+.import-btn:hover {
+  border-color: #00ff88;
+  color: #00ff88;
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.3);
+}
+
+.import-export-status {
+  width: 100%;
+  text-align: center;
+  font-size: 0.7rem;
+  margin: 4px 0 0;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.status-success {
+  color: #00ff88;
+}
+
+.status-error {
+  color: #ff6b6b;
+}

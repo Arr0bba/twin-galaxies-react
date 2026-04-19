@@ -169,6 +169,10 @@ TWIN-GALAXIES-REACT
 └── vite.config.ts
     (Vite configuration file for bundling and development server setup.)
 ```
+## 📥 Import & Export Example Files
+- [datos.json](public/datos.json)
+- [datos.xml](public/datos.xml)
+- [datos.csv](public/datos.csv)
 
 ## 📚 Sources / References 
 - 📖 'PLAY TETRIS' part repository - https://github.com/cibulka/react-tetris-ts
@@ -179,4 +183,7 @@ TWIN-GALAXIES-REACT
 - 📖 Stack Overflow - Debugging
 - 📖 REACT.DEV - Build a React App from Scratch
 - 📖 MDN - General guide for CSS,HTML and JS  
+
+
+
 
