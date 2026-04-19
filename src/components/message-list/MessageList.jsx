@@ -82,6 +82,9 @@ function MessageList() {
       if (result.format === "csv") {
         // CSV returns an array of objects directly
         messagesArray = result.data;
+      } else if (result.format === "ods") {
+        // ODS also returns an array of objects via XLSX
+        messagesArray = result.data;
       } else if (result.format === "json") {
         // JSON: { messages: [...] } or just [...]
         messagesArray = result.data.messages || result.data;
@@ -132,6 +135,16 @@ function MessageList() {
         case "csv":
           await saveFileInFormat("csv", csvData, "datos.csv");
           break;
+        case "ods": {
+          const XLSX = await import("xlsx");
+          const cleanMessages = messages.map(({ nick, content, category }) => ({ nick, content, category }));
+          const worksheet = XLSX.utils.json_to_sheet(cleanMessages);
+          const workbook = XLSX.utils.book_new();
+          XLSX.utils.book_append_sheet(workbook, worksheet, "Messages");
+          const odsData = XLSX.write(workbook, { bookType: "ods", type: "array" });
+          await saveFileInFormat("ods", odsData, "datos.ods");
+          break;
+        }
       }
 
       setImportExportStatus(`✓ Exported as ${format.toUpperCase()} successfully!`);
@@ -187,6 +200,9 @@ function MessageList() {
             </button>
             <button className="import-export-btn export-btn" onClick={() => handleExport("csv")}>
               <FaFileExport /> CSV
+            </button>
+            <button className="import-export-btn export-btn" onClick={() => handleExport("ods")}>
+              <FaFileExport /> ODS
             </button>
           </div>
           {importExportStatus && (

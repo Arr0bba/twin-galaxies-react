@@ -12,7 +12,7 @@ export default function Home() {
           <div className="neon-bar"></div>
           <img
             className="intro-logo"
-            src="img/twin-galaxies-removebg-preview.png"
+            src="/img/twin-galaxies-removebg-preview.png"
             alt="Twin Galaxies"
             title="Twin Galaxies"
           ></img>

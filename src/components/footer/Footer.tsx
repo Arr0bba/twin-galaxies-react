@@ -22,7 +22,7 @@ export default function Footer() {
               <h4>FOLLOW THE ARCADE</h4>
               <a href="https://www.instagram.com/twingalaxies/" target="_blank" rel="noopener noreferrer">
                 <img
-                  src="img/instagram-logo-removebg-preview.png"
+                  src="/img/instagram-logo-removebg-preview.png"
                   alt="Instagram logo"
                   title="Instagram"
                   width="100"
@@ -31,7 +31,7 @@ export default function Footer() {
               </a>
               <a href="https://discord.gg/twingalaxies" target="_blank" rel="noopener noreferrer">
                 <img
-                  src="img/discord-logo-removebg-preview.png"
+                  src="/img/discord-logo-removebg-preview.png"
                   alt="Discord logo"
                   title="Discord"
                   width="90"
@@ -40,7 +40,7 @@ export default function Footer() {
               </a>
               <a href="https://github.com/Arr0bba" target="_blank" rel="noopener noreferrer">
                 <img
-                  src="img/white-github-logo-removebg-preview.png"
+                  src="/img/white-github-logo-removebg-preview.png"
                   alt="Git Hub Logo"
                   title="GitHub Profile"
                   width="90"

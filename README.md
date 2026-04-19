@@ -173,6 +173,7 @@ TWIN-GALAXIES-REACT
 - [datos.json](public/datos.json)
 - [datos.xml](public/datos.xml)
 - [datos.csv](public/datos.csv)
+- [datos.ods](public/datos.ods)
 
 ## 📚 Sources / References 
 - 📖 'PLAY TETRIS' part repository - https://github.com/cibulka/react-tetris-ts

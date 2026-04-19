@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -21,7 +21,8 @@
     "react-pong": "^1.1.1",
     "react-router-dom": "^7.13.0",
     "react-tetris-ts": "^1.2.0",
-    "show-open-file-picker": "^0.4.0"
+    "show-open-file-picker": "^0.4.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

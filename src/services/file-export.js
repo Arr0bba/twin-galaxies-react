@@ -4,7 +4,7 @@ export const saveFileInFormat = async (format, data, fileName = "data.json") => 
 
   let description = "";
   let acceptedType = {};
-  let content = "";
+  let content;
 
   switch (format) {
     case "json":
@@ -28,6 +28,14 @@ export const saveFileInFormat = async (format, data, fileName = "data.json") => 
         "text/csv": [".csv"],
       };
       content = data; // CSV data should be passed as a string
+      break;
+    case "ods":
+      description = "ODS";
+      acceptedType = {
+        "application/vnd.oasis.opendocument.spreadsheet": [".ods"],
+      };
+      // For ODS, data is already passed as a Uint8Array buffer
+      content = data;
       break;
     default:
       throw new Error(`Unsupported format: ${format}`);

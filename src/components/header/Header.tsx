@@ -33,7 +33,7 @@ export default function Header() {
                     <div style={{ display: "flex", alignItems: "center" }}>
                         <img
                             className="header-logo"
-                            src="img/twin-galaxies-removebg-preview.png"
+                            src="/img/twin-galaxies-removebg-preview.png"
                             title="Twin Galaxies"
                             alt="Twin Galaxies"
                             width="150"

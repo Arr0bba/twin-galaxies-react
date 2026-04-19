@@ -23,7 +23,7 @@ export default function About() {
           <p className="paragraph-1">
             The organization gained even more attention in the 2000s with
             documentaries like The King of Kong, which showed the intense
-            rivalries and passion behind classNameic arcade gaming. Over time,
+            rivalries and passion behind arcade gaming. Over time,
             Twin Galaxies modernized its systems, changed owners, and improved
             how scores are verified, but its mission stayed the same.
           </p>

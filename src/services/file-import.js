@@ -1,5 +1,6 @@
 import { showOpenFilePicker } from "show-open-file-picker";
 import Papa from "papaparse";
+import * as XLSX from "xlsx";
 
 function xmlNodeToObject(node) {
   const children = Array.from(node.children);
@@ -86,16 +87,26 @@ export async function importFileToInternalJson() {
           "application/xml": [".xml"],
           "text/xml": [".xml"],
           "text/csv": [".csv"],
+          "application/vnd.oasis.opendocument.spreadsheet": [".ods"],
         },
       },
     ],
   });
 
   const file = await fileHandle.getFile();
-  const text = await file.text();
   const extension = getExtension(file.name);
-
-  const data = parseFileContent(extension, text);
+  
+  let data;
+  if (extension === "ods") {
+    const buffer = await file.arrayBuffer();
+    const workbook = XLSX.read(buffer, { type: "array" });
+    const firstSheetName = workbook.SheetNames[0];
+    const worksheet = workbook.Sheets[firstSheetName];
+    data = XLSX.utils.sheet_to_json(worksheet);
+  } else {
+    const text = await file.text();
+    data = parseFileContent(extension, text);
+  }
 
   return {
     fileName: file.name,
