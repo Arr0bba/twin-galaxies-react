@@ -7,10 +7,21 @@
 ![CSS](https://img.shields.io/badge/CSS-orange?logo=css3&logoColor=white)
 ![JS](https://img.shields.io/badge/JavaScript-orange?logo=javascript&logoColor=white)
 
-# Hosting URL:
+# My hosted website
+>https://twin-galaxies.web.app/
 
-https://twin-galaxies.web.app
+Now you can check my project without have to clone it :)
 
+# Projects I took inspo to make mine
+> https://www.speedrun.com/
+
+> https://www.twingalaxies.com/
+
+# HiFi concept I made on Figma 
+![Gallery](https://raw.githubusercontent.com/Arizzquierdo/twin-galaxies-react/main/public/Twin-galaxies.png)
+
+# NEW ADDITION! RSS FEED
+![Gallery](https://github.com/Arizzquierdo/twin-galaxies-react/blob/main/public/Screenshot%202026-03-15%20at%2015-58-00%20twin-galaxies-react.png)
 
 # 📝 Overhead View of the Project
 
@@ -168,14 +179,14 @@ TWIN-GALAXIES-REACT
 - [datos.pdf](public/datos.pdf)
 
 ## 📚 Sources / References 
-
-- 📖 MDN - General guide for CSS,HTML and JS  
-- 📖 W3Schools – Typescript
-- 📖 TYPESCRIPTLANG.ORG – Languague fundamentals
-- 📖 Fireships - "The Basics" video
+- 📖 'PLAY TETRIS' part repository - https://github.com/cibulka/react-tetris-ts
+- 📖 Firebase docs
+- 📖 W3Schools – Typescript syntax and grammar
+- 📖 TYPESCRIPTLANG.ORG – Offical documentation for Typescript
 - 📖 Reddit - Folder Structure Scheme
 - 📖 Stack Overflow - Debugging
 - 📖 REACT.DEV - Build a React App from Scratch
+- 📖 MDN - General guide for CSS,HTML and JS  
 
 
 
